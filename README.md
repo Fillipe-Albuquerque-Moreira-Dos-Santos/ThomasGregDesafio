@@ -38,6 +38,8 @@ back end porta 8080
 ## 🧱 Modelagem de Dados
 
 ```sql
+Banco de dados: clientes
+
 CREATE TABLE Cliente (
     id_cliente INT PRIMARY KEY IDENTITY,
     nome VARCHAR(255) NOT NULL,
