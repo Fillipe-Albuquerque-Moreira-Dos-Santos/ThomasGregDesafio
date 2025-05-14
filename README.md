@@ -23,7 +23,7 @@ Este projeto é uma solução para o desafio de implementar um sistema de **cada
 - Autenticação HTTP Basic  
 
 > 📄 A documentação da API pode ser acessada via Swagger em:  
-> `http://localhost:8080/swagger-ui.html` 
+> `http://localhost:8080/swagger-ui/index.html#/` 
 
 ### Frontend
 - JSF (JavaServer Faces)  
