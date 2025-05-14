@@ -24,7 +24,9 @@ Este projeto é uma solução para o desafio de implementar um sistema de **cada
 
 > 📄 A documentação da API pode ser acessada via Swagger em:  
 > `http://localhost:8080/swagger-ui/index.html#/` 
-
+back end porta 8080
+> front end porta 8081
+> 
 ### Frontend
 - JSF (JavaServer Faces)  
 - PrimeFaces  
