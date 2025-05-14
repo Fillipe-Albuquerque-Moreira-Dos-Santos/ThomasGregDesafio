@@ -7,7 +7,7 @@ Este projeto é uma solução para o desafio de implementar um sistema de **cada
 - Frontend: **JSF + PrimeFaces**, HTML, CSS, JavaScript
 - Backend: **Spring Boot (Java 8)**
 - Banco de Dados: **SQL Server 2022** (executado via Docker)
-- IDE recomendada: Eclipse ou IntelliJ
+- IDE Utilizada: IntelliJ
 - Gerenciador de banco: **DBeaver**
 
 ---
