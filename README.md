@@ -25,7 +25,7 @@ Este projeto é uma solução para o desafio de implementar um sistema de **cada
 - JSF (JavaServer Faces)
 - PrimeFaces
 - HTML, CSS, JS
-- Servidor de aplicação: WildFly 26 (Java EE)
+- Servidor de aplicação: WildFly 18.0.1 (Java EE)
 
 ---
 
