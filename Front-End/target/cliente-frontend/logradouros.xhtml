@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+    <title>Gerenciamento de Logradouros</title>
+    <h:outputStylesheet name="css/styles.css" />
+</h:head>
+
+<h:body>
+    <div class="container">
+        <h:form id="formLogradouro">
+            <p:growl id="growl" sticky="false" showDetail="true" life="5000" />
+
+            <p:panel header="Gerenciamento de Logradouros">
+                <p:toolbar>
+                    <f:facet name="left">
+                        <p:commandButton value="Novo Logradouro"
+                                         icon="pi pi-plus"
+                                         styleClass="ui-button-success"
+                                         onclick="abrirDialogNovo(); return false;" />
+                        <p:commandButton value="Gerenciamento de Clientes"
+                                         icon="pi pi-arrow-left"
+                                         styleClass="ui-button-secondary"
+                                         onclick="window.location.href='listarClientes.xhtml'; return false;" />
+                    </f:facet>
+                </p:toolbar>
+
+                <!-- Tabela renderizada via JavaScript -->
+                <table id="tabelaLogradouros" class="clientes-tabela tabela-compacta" style="width: 600px; margin-top: 10px;">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Descrição</th>
+                        <th>Ações</th>
+                    </tr>
+                    </thead>
+                    <tbody id="corpoTabelaLogradouros">
+                    <!-- preenchido via JS -->
+                    </tbody>
+                </table>
+            </p:panel>
+        </h:form>
+
+        <!-- Diálogo de Cadastro/Edição -->
+        <p:dialog header="Logradouro" widgetVar="dlgLogradouro" modal="true" id="dlgLogradouro" resizable="false">
+            <h:form id="formDialog">
+                <h:panelGrid columns="2" cellpadding="5" styleClass="form-grid">
+                    <p:outputLabel for="descricao" value="Descrição:" />
+                    <p:inputText id="descricao" value="" required="true" styleClass="form-input" />
+                </h:panelGrid>
+
+                <div class="form-actions">
+                    <p:commandButton value="Salvar"
+                                     styleClass="btn btn-primary"
+                                     onclick="salvarLogradouro(); return false;" />
+                    <p:commandButton value="Cancelar"
+                                     styleClass="btn btn-secondary"
+                                     onclick="PF('dlgLogradouro').hide(); return false;" />
+                </div>
+            </h:form>
+        </p:dialog>
+
+        <!-- Diálogo de Confirmação -->
+        <h:form>
+            <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                <p:commandButton value="Sim" type="button"
+                                 styleClass="ui-confirmdialog-yes btn btn-danger"
+                                 icon="pi pi-check" />
+                <p:commandButton value="Não" type="button"
+                                 styleClass="ui-confirmdialog-no btn btn-secondary"
+                                 icon="pi pi-times" />
+            </p:confirmDialog>
+        </h:form>
+
+        <!-- Área de debug - opcional, pode ser removida em produção -->
+        <div id="debugInfo"></div>
+    </div>
+
+    <!-- Scripts -->
+    <h:outputScript name="js/logradouro.js" />
+    <script>
+        // Script já contém o listener DOMContentLoaded no arquivo JS
+    </script>
+</h:body>
+</html>
