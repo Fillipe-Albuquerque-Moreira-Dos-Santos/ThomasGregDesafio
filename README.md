@@ -4,10 +4,10 @@
 
 Este projeto é uma solução para o desafio de implementar um sistema de **cadastro de clientes**, com as funcionalidades de criar, editar, listar e excluir **clientes e logradouros**. A aplicação utiliza:
 
-- Frontend: **JSF + PrimeFaces**, HTML, CSS, JavaScript
-- Backend: **Spring Boot (Java 8)**
-- Banco de Dados: **SQL Server 2022** (executado via Docker)
-- IDE Utilizada: IntelliJ
+- Frontend: **JSF + PrimeFaces**, HTML, CSS, JavaScript  
+- Backend: **Spring Boot (Java 8)**  
+- Banco de Dados: **SQL Server 2022** (executado via Docker)  
+- IDE Utilizada: IntelliJ  
 - Gerenciador de banco: **DBeaver**
 
 ---
@@ -15,16 +15,20 @@ Este projeto é uma solução para o desafio de implementar um sistema de **cada
 ## 📐 Arquitetura da Solução
 
 ### Backend
-- Spring Boot com Java 8
-- API RESTful
-- JPA (Hibernate) para mapeamento de entidades
-- SQL Server 2022 para persistência dos dados
-- Autenticação HTTP Basic
+- Spring Boot com Java 8  
+- API RESTful  
+- Swagger UI para documentação da API  
+- JPA (Hibernate) para mapeamento de entidades  
+- SQL Server 2022 para persistência dos dados  
+- Autenticação HTTP Basic  
+
+> 📄 A documentação da API pode ser acessada via Swagger em:  
+> `http://localhost:8080/swagger-ui.html` 
 
 ### Frontend
-- JSF (JavaServer Faces)
-- PrimeFaces
-- HTML, CSS, JS
+- JSF (JavaServer Faces)  
+- PrimeFaces  
+- HTML, CSS, JS  
 - Servidor de aplicação: WildFly 18.0.1 (Java EE)
 
 ---
@@ -45,33 +49,3 @@ CREATE TABLE Logradouro (
     logradouro VARCHAR(255) NOT NULL,
     FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente)
 );
-
-### 1. Instalar Java 8
-Baixe e instale o Java 8 (JDK 1.8):
-
-🔗 https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html
-
----
-
-### 2. Instalar Maven
-Maven é necessário para compilar o backend:
-
-🔗 https://maven.apache.org/install.html
-
----
-
-### 3. Instalar Docker
-Docker será usado para executar o SQL Server 2022:
-
-🔗 https://docs.docker.com/get-docker/
-
----
-
-### 4. Subir SQL Server 2022 com Docker
-
-Execute o comando abaixo no terminal:
-
-```bash
-docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Your_password123" \
-   -p 1433:1433 --name sql_server_2022 \
-   -d mcr.microsoft.com/mssql/server:2022-latest
